@@ -1,8 +1,11 @@
+import React, { Fragment } from 'react';
+import Header from "./components/Layouts/Header";
+
 function App() {
   return (
-    <div>
-      <h2>Great</h2>
-    </div>
+    <Fragment>
+      <Header />
+    </Fragment>
   );
 }
 
