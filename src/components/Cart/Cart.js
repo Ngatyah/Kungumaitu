@@ -6,9 +6,12 @@ import CartItem from './CartItem';
 
 const Cart = props => {
     const cartCtx = useContext(CartContext)
+    const totalAmount = cartCtx.totalAmount.toFixed(2);
+    const hasItems = cartCtx.items.length > 0;
 
     const cartItems = <ul>{
         cartCtx.items.map(item => <CartItem
+            key={item.id}
             price={item.price}
             amount={item.amount}
             name={item.name}
@@ -17,12 +20,12 @@ const Cart = props => {
         {cartItems}
         <div className={classes.total}>
             <span>Total Amount</span>
-            <span>{cartCtx.totalAmount}</span>
+            <span>{totalAmount}</span>
         </div>
 
         <div className={classes.actions}>
             <button className={classes['button--alt']} onClick={props.onHideCart}>Close</button>
-            <button className={classes.button}>Order </button>
+            {hasItems && <button className={classes.button}>Order </button>}
         </div>
     </Modal>
 }
