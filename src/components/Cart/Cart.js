@@ -16,7 +16,7 @@ const Cart = props => {
 
     }
 
-    const cartItems = <ul>{
+    const cartItems = <ul className={classes['cart-items']}>{
         cartCtx.items.map(item => <CartItem
             key={item.id}
             price={item.price}
@@ -27,6 +27,7 @@ const Cart = props => {
         />)}</ul>
     return <Modal onclose={props.onHideCart}>
         {cartItems}
+        <div></div>
         <div className={classes.total}>
             <span>Total Amount</span>
             <span>{totalAmount}</span>
