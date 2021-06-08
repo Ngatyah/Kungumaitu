@@ -15,7 +15,10 @@ const cartReducer = (state, action) => {
             totalAmount: updatedTotalAmount
         };
 
+
+
     }
+
     return defaultCartState;
 
 };
@@ -30,6 +33,7 @@ const CartProvider = props => {
     const removeItemFromCartHandler = id => {
         cartDispatchFn({ type: "REMOVE", id: id })
     }
+
 
     const cartContext = {
         items: cartState.items,
