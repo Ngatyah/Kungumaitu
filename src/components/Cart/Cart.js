@@ -13,6 +13,7 @@ const Cart = props => {
 
     }
     const cartItemAddHandler = item => {
+        cartCtx.addItem({ ...item, totalAmount: -1 })
 
     }
 
